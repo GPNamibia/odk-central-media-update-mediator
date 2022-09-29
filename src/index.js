@@ -15,16 +15,10 @@ app.all('*', async(req, res) => {
         `\n${ new Date().toUTCString('en-GB', { timeZone: 'UTC' }) }  - `,
         `The PTracker update media file mediator has received a new request. \n`
     );
-    ptrackerData.getPtrackerData()
+    await ptrackerData.getPtrackerData()
         .then((results) => {
-            try {
-                console.log(results)
                 res.json('PTracker Data openMRS Database retrieved.');
-            } catch (error) {
-                console.error(`Error retrieving PTracker Data from openMRS Database: ${error}`)
-            }
-
-        }).catch(error => { console.error(`Error retrieving PTracker Data: ${error}`) })
+        }).catch(error => { res.json(`Error retrieving PTracker Data: ${error}`) })
 });
 
 //Server PORT
