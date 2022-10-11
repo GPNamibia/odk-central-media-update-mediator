@@ -1,5 +1,5 @@
 async function readData(model) {
-    const foundItems = await model.findAll({limit:2000})
+    const foundItems = await model.findAll({})
     return foundItems
 }
 
