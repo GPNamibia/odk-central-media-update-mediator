@@ -28,6 +28,13 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
+        pnc_visit: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
         l_and_d_visit: {
             type: DataTypes.TEXT,
             allowNull: true,
@@ -65,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        date_of_last_hivtest: {
+        date_of_last_ht: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
@@ -86,7 +93,7 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        hiv_status: {
+        hstatus: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
@@ -114,21 +121,35 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        given_name: {
+        gn: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
-        middle_name: {
+        mn: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 notEmpty: true
             }
         },
-        family_name: {
+        fn: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        openmrs_person_uuid: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        openmrs_patient_uuid: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
@@ -141,7 +162,14 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 notEmpty: true
             }
-        }
+        },
+        has_parent: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                notEmpty: true
+            }
+        },
     });
 
     return stag_plist;
